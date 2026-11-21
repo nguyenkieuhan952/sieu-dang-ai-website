@@ -1,0 +1,1786 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIÊU ĐĂNG AI — Nền Tảng Hỗ Trợ Sáng Tạo, Quản Lý & Đăng Tải Nội Dung Mạng Xã Hội</title>
+  <meta name="description" content="Website giới thiệu sản phẩm và công khai thông tin pháp lý chính thức của SIÊU ĐĂNG AI: Điều khoản sử dụng, Chính sách bảo mật, Xóa dữ liệu người dùng và Liên hệ hỗ trợ." />
+  <meta name="keywords" content="SIÊU ĐĂNG AI, quản lý nội dung mạng xã hội, đăng tải nội dung tự động, điều khoản sử dụng, chính sách bảo mật, xóa dữ liệu người dùng, TikTok for Developers" />
+  <meta name="author" content="SIÊU ĐĂNG AI" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="vi_VN" />
+  <meta property="og:site_name" content="SIÊU ĐĂNG AI" />
+  <meta property="og:title" content="SIÊU ĐĂNG AI — Giải Pháp Sáng Tạo, Quản Lý & Đăng Tải Nội Dung" />
+  <meta property="og:description" content="Cổng thông tin sản phẩm và các chính sách pháp lý công khai dành cho cá nhân, nhà sáng tạo nội dung và doanh nghiệp sử dụng SIÊU ĐĂNG AI." />
+
+  <!-- Inline SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2322d3ee'/%3E%3Cstop offset='55%25' stop-color='%233b82f6'/%3E%3Cstop offset='100%25' stop-color='%23a855f7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23050816'/%3E%3Cpath d='M32 10L50 20.5V41.5L32 52L14 41.5V20.5L32 10Z' fill='none' stroke='url(%23g)' stroke-width='3.5'/%3E%3Ccircle cx='32' cy='31' r='7' fill='url(%23g)'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts: Be Vietnam Pro & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    // Cấu hình Tailwind cho bảng màu công nghệ AI (Cyan, Xanh đậm, Tím công nghệ) và font chữ tiếng Việt
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Be Vietnam Pro"', '"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', '"Be Vietnam Pro"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            void: '#040711',
+            obsidian: '#080e21',
+            panel: '#0d1630',
+            cyanGlow: '#22d3ee',
+            electricBlue: '#3b82f6',
+            techPurple: '#a855f7',
+          },
+          boxShadow: {
+            'cyan-sm': '0 0 20px rgba(34, 211, 238, 0.16)',
+            'cyan-md': '0 0 36px rgba(34, 211, 238, 0.24)',
+            'purple-glow': '0 0 36px rgba(168, 85, 247, 0.22)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Thiết lập nền lưới công nghệ tinh tế & hiệu ứng chuyển động tôn trọng prefers-reduced-motion */
+    body {
+      background-color: #040711;
+      color: #f1f5f9;
+      font-family: 'Be Vietnam Pro', 'Plus Jakarta Sans', system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .tech-grid-bg {
+      background-image:
+        radial-gradient(circle at 18% 12%, rgba(34, 211, 238, 0.14), transparent 36%),
+        radial-gradient(circle at 82% 18%, rgba(168, 85, 247, 0.15), transparent 38%),
+        radial-gradient(circle at 50% 85%, rgba(59, 130, 246, 0.12), transparent 45%),
+        linear-gradient(to right, rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+    }
+
+    .glass-card {
+      background: linear-gradient(145deg, rgba(13, 22, 48, 0.78), rgba(7, 13, 29, 0.88));
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(148, 163, 184, 0.14);
+    }
+
+    .glass-card-hover {
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .glass-card-hover:hover {
+      transform: translateY(-3px);
+      border-color: rgba(34, 211, 238, 0.42);
+      box-shadow: 0 12px 32px -8px rgba(34, 211, 238, 0.16);
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .animate-float-slow {
+      animation: floatSlow 6s ease-in-out infinite;
+    }
+
+    @keyframes viewFadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .view-enter {
+      animation: viewFadeIn 0.28s ease-out forwards;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animate-float-slow,
+      .view-enter,
+      .glass-card-hover {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+      }
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    /* Thanh cuộn tinh tế */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #050916;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(100, 116, 139, 0.4);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(34, 211, 238, 0.65);
+    }
+  </style>
+</head>
+<body class="tech-grid-bg min-h-screen flex flex-col antialiased selection:bg-cyan-400/25 selection:text-cyan-200">
+
+  <!-- Thanh điều hướng trên cùng (Sticky Header) -->
+  <header class="sticky top-0 z-40 border-b border-slate-800/80 bg-[#040711]/85 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-[4.5rem] gap-3">
+
+        <!-- Logo thương hiệu SIÊU ĐĂNG AI (SVG hình học + chữ) -->
+        <a
+          href="#/"
+          data-route="/"
+          class="nav-link flex items-center gap-3 rounded-xl py-1.5 pr-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 group shrink-0"
+          aria-label="SIÊU ĐĂNG AI — Trang chủ"
+        >
+          <span class="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400/20 via-blue-500/20 to-purple-500/20 border border-cyan-400/40 shadow-cyan-sm group-hover:border-cyan-300 transition-colors">
+            <svg class="w-6 h-6" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="brandGrad" x1="2" y1="2" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#22d3ee" />
+                  <stop offset="55%" stop-color="#3b82f6" />
+                  <stop offset="100%" stop-color="#c084fc" />
+                </linearGradient>
+              </defs>
+              <polygon points="18,3 31,10.5 31,25.5 18,33 5,25.5 5,10.5" stroke="url(#brandGrad)" stroke-width="2.2" fill="rgba(13,22,48,0.65)" />
+              <path d="M12.5 18.5L16.5 22.5L24 14" stroke="#22d3ee" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="18" cy="10" r="1.8" fill="#c084fc" />
+            </svg>
+          </span>
+          <div class="flex flex-col leading-none">
+            <span class="font-display font-extrabold tracking-tight text-base sm:text-lg bg-gradient-to-r from-cyan-300 via-sky-300 to-purple-300 bg-clip-text text-transparent">
+              SIÊU ĐĂNG AI
+            </span>
+            <span class="text-[11px] font-medium text-slate-400 tracking-wide mt-0.5">
+              Content &amp; Compliance Hub
+            </span>
+          </div>
+        </a>
+
+        <!-- Menu điều hướng Desktop -->
+        <nav class="hidden lg:flex items-center gap-1" aria-label="Điều hướng chính">
+          <a href="#/" data-route="/" class="nav-item px-3.5 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyan-300 hover:bg-slate-800/60 transition-colors">
+            Trang chủ
+          </a>
+          <a href="#/terms" data-route="/terms" class="nav-item px-3.5 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyan-300 hover:bg-slate-800/60 transition-colors">
+            Điều khoản sử dụng
+          </a>
+          <a href="#/privacy" data-route="/privacy" class="nav-item px-3.5 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyan-300 hover:bg-slate-800/60 transition-colors">
+            Chính sách bảo mật
+          </a>
+          <a href="#/data-deletion" data-route="/data-deletion" class="nav-item px-3.5 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyan-300 hover:bg-slate-800/60 transition-colors">
+            Xóa dữ liệu
+          </a>
+          <a href="#/contact" data-route="/contact" class="nav-item px-3.5 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyan-300 hover:bg-slate-800/60 transition-colors">
+            Liên hệ
+          </a>
+        </nav>
+
+        <!-- Cụm nút hành động bên phải (Desktop & Mobile) -->
+        <div class="flex items-center gap-2 sm:gap-2.5">
+          <button
+            type="button"
+            id="preview-404-btn"
+            class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-purple-200 bg-slate-900/80 hover:bg-purple-950/50 border border-slate-700/80 hover:border-purple-400/40 transition-colors cursor-pointer"
+            title="Xem trước giao diện trang lỗi 404"
+          >
+            <svg class="w-3.5 h-3.5 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+            <span>Xem 404</span>
+          </button>
+
+          <a
+            href="#/contact"
+            data-route="/contact"
+            class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-950 bg-gradient-to-r from-cyan-300 via-cyan-400 to-sky-400 hover:from-cyan-200 hover:to-sky-300 shadow-cyan-sm transition-all"
+          >
+            <span>Hỗ trợ</span>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+            </svg>
+          </a>
+
+          <!-- Nút mở Drawer trên thiết bị di động -->
+          <button
+            type="button"
+            id="mobile-menu-toggle"
+            class="lg:hidden inline-flex items-center justify-center p-2.5 rounded-xl text-slate-200 hover:text-cyan-300 bg-slate-900/90 border border-slate-700/80 hover:border-cyan-400/40 transition-colors cursor-pointer"
+            aria-label="Mở menu điều hướng"
+            aria-expanded="false"
+            aria-controls="mobile-drawer"
+          >
+            <svg id="hamburger-icon" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Thanh hiển thị đường dẫn hiện tại (Route / URL Bar nhỏ gọn hỗ trợ kiểm tra hồ sơ) -->
+      <div class="py-2 border-t border-slate-800/60 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-400">
+        <div class="flex items-center gap-2 min-w-0">
+          <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-cyan-500/10 border border-cyan-400/25 text-cyan-300 font-medium shrink-0">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+            Đường dẫn công khai
+          </span>
+          <code id="active-route-display" class="font-mono text-slate-200 truncate">/</code>
+        </div>
+        <div class="flex items-center gap-3 text-[11px] text-slate-400">
+          <span>Email hỗ trợ: <a href="mailto:hannk.designer@gmail.com" class="text-cyan-300 hover:underline">hannk.designer@gmail.com</a></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Ngăn kéo điều hướng di động (Mobile Drawer) -->
+  <div id="mobile-drawer-backdrop" class="fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-sm hidden opacity-0 transition-opacity duration-200 lg:hidden" aria-hidden="true"></div>
+  <aside
+    id="mobile-drawer"
+    class="fixed top-0 right-0 bottom-0 z-50 w-80 max-w-[88vw] bg-[#070d20] border-l border-slate-800 shadow-2xl transform translate-x-full transition-transform duration-250 ease-out lg:hidden flex flex-col justify-between p-5"
+    aria-label="Menu điều hướng di động"
+    tabindex="-1"
+  >
+    <div>
+      <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-lg bg-cyan-400/15 border border-cyan-400/35 flex items-center justify-center text-cyan-300 font-bold text-sm">
+            AI
+          </span>
+          <div>
+            <p class="font-display font-bold text-sm text-white">SIÊU ĐĂNG AI</p>
+            <p class="text-[11px] text-slate-400">Điều hướng trang</p>
+          </div>
+        </div>
+        <button
+          type="button"
+          id="mobile-menu-close"
+          class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/80 transition-colors cursor-pointer"
+          aria-label="Đóng menu điều hướng"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mt-4 flex flex-col gap-1.5">
+        <a href="#/" data-route="/" class="mobile-nav-link flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-medium text-slate-200 hover:bg-slate-800/70 hover:text-cyan-300 transition-colors">
+          <span>Trang chủ</span>
+          <span class="text-xs font-mono text-slate-500">/</span>
+        </a>
+        <a href="#/terms" data-route="/terms" class="mobile-nav-link flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-medium text-slate-200 hover:bg-slate-800/70 hover:text-cyan-300 transition-colors">
+          <span>Điều khoản sử dụng</span>
+          <span class="text-xs font-mono text-slate-500">/terms</span>
+        </a>
+        <a href="#/privacy" data-route="/privacy" class="mobile-nav-link flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-medium text-slate-200 hover:bg-slate-800/70 hover:text-cyan-300 transition-colors">
+          <span>Chính sách bảo mật</span>
+          <span class="text-xs font-mono text-slate-500">/privacy</span>
+        </a>
+        <a href="#/data-deletion" data-route="/data-deletion" class="mobile-nav-link flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-medium text-slate-200 hover:bg-slate-800/70 hover:text-cyan-300 transition-colors">
+          <span>Xóa dữ liệu người dùng</span>
+          <span class="text-xs font-mono text-slate-500">/data-deletion</span>
+        </a>
+        <a href="#/contact" data-route="/contact" class="mobile-nav-link flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-medium text-slate-200 hover:bg-slate-800/70 hover:text-cyan-300 transition-colors">
+          <span>Liên hệ</span>
+          <span class="text-xs font-mono text-slate-500">/contact</span>
+        </a>
+        <button
+          type="button"
+          id="mobile-preview-404"
+          class="mt-2 flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-medium text-purple-300 bg-purple-950/30 border border-purple-500/25 hover:bg-purple-900/40 transition-colors cursor-pointer text-left"
+        >
+          <span>Xem thử trang 404</span>
+          <span class="text-xs font-mono text-purple-400">/404</span>
+        </button>
+      </nav>
+    </div>
+
+    <div class="pt-4 border-t border-slate-800 text-xs text-slate-400 space-y-1.5">
+      <p class="font-semibold text-slate-200">SIÊU ĐĂNG AI</p>
+      <p>Hỗ trợ chính thức: <a href="mailto:hannk.designer@gmail.com" class="text-cyan-300 hover:underline">hannk.designer@gmail.com</a></p>
+      <p class="text-[11px] text-slate-500">Hỗ trợ truy cập công khai phục vụ hồ sơ ứng dụng &amp; minh bạch pháp lý.</p>
+    </div>
+  </aside>
+
+  <!-- Nội dung chính động theo từng tuyến đường -->
+  <main id="app-root" class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <!-- Nội dung được render an toàn qua JavaScript theo route hiện tại -->
+  </main>
+
+  <!-- Chân trang (Footer) -->
+  <footer class="border-t border-slate-800/90 bg-[#040711]/95 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-10 border-b border-slate-800/80">
+
+        <!-- Cột thương hiệu -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-400/20 to-purple-500/20 border border-cyan-400/35 flex items-center justify-center">
+              <svg class="w-5 h-5" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+                <polygon points="18,3 31,10.5 31,25.5 18,33 5,25.5 5,10.5" stroke="#22d3ee" stroke-width="2.4" />
+                <circle cx="18" cy="18" r="5" fill="#a855f7" />
+              </svg>
+            </span>
+            <div>
+              <p class="font-display font-bold text-base text-white">SIÊU ĐĂNG AI</p>
+              <p class="text-xs text-slate-400">Hỗ trợ sáng tạo, quản lý &amp; đăng tải nội dung mạng xã hội</p>
+            </div>
+          </div>
+
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Cổng thông tin sản phẩm và công khai chính sách pháp lý cho cá nhân, nhà sáng tạo nội dung và doanh nghiệp. Các đường dẫn chính sách được thiết kế để truy cập trực tiếp, không yêu cầu đăng nhập.
+          </p>
+
+          <div class="inline-flex flex-wrap items-center gap-2 text-xs text-slate-300 bg-slate-900/80 border border-slate-800 rounded-xl px-3.5 py-2">
+            <span class="text-cyan-400 font-semibold">Email liên hệ:</span>
+            <a href="mailto:hannk.designer@gmail.com" class="font-mono text-cyan-300 hover:underline">hannk.designer@gmail.com</a>
+          </div>
+        </div>
+
+        <!-- Cột điều hướng trang -->
+        <div class="lg:col-span-3 space-y-3">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-slate-300">Danh mục trang</h2>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="#/" data-route="/" class="footer-link text-slate-400 hover:text-cyan-300 transition-colors">Trang chủ (<span class="font-mono text-xs">/</span>)</a></li>
+            <li><a href="#/terms" data-route="/terms" class="footer-link text-slate-400 hover:text-cyan-300 transition-colors">Điều khoản sử dụng (<span class="font-mono text-xs">/terms</span>)</a></li>
+            <li><a href="#/privacy" data-route="/privacy" class="footer-link text-slate-400 hover:text-cyan-300 transition-colors">Chính sách bảo mật (<span class="font-mono text-xs">/privacy</span>)</a></li>
+            <li><a href="#/data-deletion" data-route="/data-deletion" class="footer-link text-slate-400 hover:text-cyan-300 transition-colors">Xóa dữ liệu người dùng (<span class="font-mono text-xs">/data-deletion</span>)</a></li>
+            <li><a href="#/contact" data-route="/contact" class="footer-link text-slate-400 hover:text-cyan-300 transition-colors">Liên hệ (<span class="font-mono text-xs">/contact</span>)</a></li>
+          </ul>
+        </div>
+
+        <!-- Cột minh bạch & lưu ý xác nhận -->
+        <div class="lg:col-span-4 space-y-3">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-slate-300">Nguyên tắc minh bạch &amp; xác nhận</h2>
+          <div class="p-4 rounded-xl bg-amber-950/20 border border-amber-500/25 text-xs text-slate-300 leading-relaxed space-y-2">
+            <p class="font-semibold text-amber-300 flex items-center gap-1.5">
+              <span>Lưu ý đối chiếu mã nguồn thực tế</span>
+            </p>
+            <p>
+              Các nội dung kỹ thuật, cơ chế bảo vệ token, thời hạn lưu trữ hoặc chia sẻ dữ liệu được gắn nhãn <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-200 font-mono text-[11px]">[CẦN CHỦ SỞ HỮU XÁC NHẬN]</span> cần được chủ sở hữu SIÊU ĐĂNG AI đối chiếu trực tiếp với hệ thống vận hành thực tế trước khi công bố chính thức.
+            </p>
+            <p class="text-slate-400">
+              Website không khẳng định trạng thái cấp quyền API từ bên thứ ba hoặc chứng nhận bảo mật chưa được xác minh.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+        <p>© <span id="current-year">2026</span> SIÊU ĐĂNG AI. Mọi quyền được bảo lưu.</p>
+        <p>Liên hệ hỗ trợ &amp; pháp lý: <a href="mailto:hannk.designer@gmail.com" class="text-slate-400 hover:text-cyan-300">hannk.designer@gmail.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toàn bộ logic định tuyến SPA (hỗ trợ cả /terms, /privacy, /data-deletion, /contact, /404 và hash #/...) + nội dung chi tiết các trang -->
+  <script>
+    (function () {
+      'use strict';
+
+      const SUPPORT_EMAIL = 'hannk.designer@gmail.com';
+      const BRAND_NAME = 'SIÊU ĐĂNG AI';
+      const VALID_ROUTES = ['/', '/terms', '/privacy', '/data-deletion', '/contact', '/404'];
+
+      // Cập nhật năm hiện tại ở footer
+      const yearEl = document.getElementById('current-year');
+      if (yearEl) {
+        yearEl.textContent = String(new Date().getFullYear());
+      }
+
+      /**
+       * Chuẩn hóa đường dẫn hiện tại từ location.hash hoặc location.pathname
+       * Hỗ trợ mượt mà cho cả môi trường preview/static hosting lẫn đường dẫn sạch
+       */
+      function resolveRoute() {
+        const hash = window.location.hash || '';
+        if (hash.startsWith('#/')) {
+          const cleanHashRoute = hash.slice(1).split('?')[0] || '/';
+          return VALID_ROUTES.includes(cleanHashRoute) ? cleanHashRoute : '/404';
+        }
+
+        const pathname = window.location.pathname || '/';
+        // Nếu pathname khớp trực tiếp một route hợp lệ
+        if (VALID_ROUTES.includes(pathname)) {
+          return pathname;
+        }
+
+        // Nếu pathname là index.html hoặc thư mục gốc
+        if (pathname === '/' || pathname.endsWith('/index.html')) {
+          return '/';
+        }
+
+        // Trích xuất phần cuối nếu người dùng truy cập dạng /terms hoặc /privacy trên sub-path
+        for (const r of ['/terms', '/privacy', '/data-deletion', '/contact', '/404']) {
+          if (pathname.endsWith(r)) {
+            return r;
+          }
+        }
+
+        return '/404';
+      }
+
+      /**
+       * Điều hướng tới một route chỉ định an toàn (không dùng history.pushState với origin khác để tránh lỗi SecurityError trong sandbox/blob/srcdoc)
+       */
+      function navigateTo(route, preview404 = false) {
+        const target = preview404 ? '/404' : (VALID_ROUTES.includes(route) ? route : '/404');
+        const nextHash = '#' + target;
+
+        if (window.location.hash !== nextHash) {
+          window.location.hash = nextHash;
+        }
+        renderCurrentRoute();
+        window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      }
+
+      /**
+       * Badge hiển thị rõ các điểm cần chủ sở hữu xác nhận với mã nguồn/hạ tầng thực tế
+       */
+      function unverifiedBadge(label = 'CẦN CHỦ SỞ HỮU XÁC NHẬN') {
+        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-amber-500/15 text-amber-300 border border-amber-400/35 align-middle">[${escapeHtml(label)}]</span>`;
+      }
+
+      /**
+       * Escape HTML cơ bản để bảo đảm an toàn khi chèn nội dung động
+       */
+      function escapeHtml(str) {
+        return String(str)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      /**
+       * Tái sử dụng khung tiêu đề trang (Page Header) đồng bộ giữa các trang pháp lý & chức năng
+       */
+      function renderPageHero({ badge, title, highlight, subtitle, metaItems = [] }) {
+        return `
+          <section class="relative overflow-hidden rounded-3xl glass-card p-6 sm:p-10 mb-8 sm:mb-10">
+            <div class="pointer-events-none absolute -top-24 -right-24 w-72 h-72 rounded-full bg-cyan-500/10 blur-3xl"></div>
+            <div class="pointer-events-none absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-purple-500/10 blur-3xl"></div>
+
+            <div class="relative z-10 max-w-4xl">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-cyan-400/10 text-cyan-300 border border-cyan-400/30 mb-4">
+                <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                <span>${escapeHtml(badge)}</span>
+              </div>
+
+              <h1 class="font-display text-2xl sm:text-4xl lg:text-[2.65rem] font-extrabold tracking-tight text-white leading-[1.18]">
+                ${escapeHtml(title)} <span class="bg-gradient-to-r from-cyan-300 via-sky-300 to-purple-300 bg-clip-text text-transparent">${escapeHtml(highlight)}</span>
+              </h1>
+
+              <p class="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed max-w-3xl">
+                ${subtitle}
+              </p>
+
+              ${metaItems.length > 0 ? `
+                <div class="mt-6 pt-5 border-t border-slate-800/80 flex flex-wrap gap-3 text-xs text-slate-300">
+                  ${metaItems.map(item => `
+                    <div class="px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-2">
+                      <span class="text-slate-400">${escapeHtml(item.label)}:</span>
+                      <span class="font-medium text-cyan-200">${item.value}</span>
+                    </div>
+                  `).join('')}
+                </div>
+              ` : ''}
+            </div>
+          </section>
+        `;
+      }
+
+      /**
+       * 1. TRANG CHỦ (/)
+       */
+      function renderHomeView() {
+        return `
+          <div class="view-enter space-y-12 sm:space-y-16">
+            <!-- Hero Section -->
+            <section class="relative overflow-hidden rounded-3xl glass-card p-6 sm:p-10 lg:p-14">
+              <div class="pointer-events-none absolute -top-28 -right-28 w-80 h-80 rounded-full bg-cyan-400/15 blur-3xl"></div>
+              <div class="pointer-events-none absolute -bottom-28 -left-24 w-80 h-80 rounded-full bg-purple-500/15 blur-3xl"></div>
+
+              <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                  <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r from-cyan-500/15 to-purple-500/15 border border-cyan-400/35 text-cyan-200">
+                    <span class="w-2 h-2 rounded-full bg-cyan-300"></span>
+                    <span>Nền tảng hỗ trợ sáng tạo, quản lý &amp; đăng tải nội dung</span>
+                  </div>
+
+                  <h1 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-[1.14]">
+                    Tối ưu quy trình nội dung cùng
+                    <span class="block mt-1 bg-gradient-to-r from-cyan-300 via-sky-300 to-purple-300 bg-clip-text text-transparent">
+                      SIÊU ĐĂNG AI
+                    </span>
+                  </h1>
+
+                  <p class="text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed">
+                    <strong>SIÊU ĐĂNG AI</strong> là giải pháp phần mềm hỗ trợ sáng tạo ý tưởng, tổ chức lịch xuất bản, quản lý kho nội dung và kết nối đăng tải trên các nền tảng mạng xã hội — phục vụ <strong>cá nhân</strong>, <strong>nhà sáng tạo nội dung</strong> và <strong>doanh nghiệp</strong> với định hướng minh bạch và tuân thủ chính sách nền tảng.
+                  </p>
+
+                  <div class="flex flex-wrap items-center gap-3 pt-1">
+                    <a href="#/contact" data-route="/contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-cyan-300 via-cyan-400 to-sky-400 hover:from-cyan-200 hover:to-sky-300 shadow-cyan-md transition-all">
+                      <span>Liên hệ tư vấn &amp; hỗ trợ</span>
+                      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+                      </svg>
+                    </a>
+                    <a href="#/privacy" data-route="/privacy" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-slate-200 bg-slate-900/80 hover:bg-slate-800/90 border border-slate-700/80 hover:border-cyan-400/40 transition-colors">
+                      <span>Xem Chính sách bảo mật</span>
+                    </a>
+                  </div>
+
+                  <!-- Các liên kết pháp lý trọng yếu -->
+                  <div class="pt-4 border-t border-slate-800/80 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-slate-400">
+                    <span class="text-slate-300 font-medium">Tài liệu pháp lý công khai:</span>
+                    <a href="#/terms" data-route="/terms" class="text-cyan-300 hover:underline font-medium">Điều khoản sử dụng (/terms)</a>
+                    <a href="#/privacy" data-route="/privacy" class="text-cyan-300 hover:underline font-medium">Chính sách bảo mật (/privacy)</a>
+                    <a href="#/data-deletion" data-route="/data-deletion" class="text-cyan-300 hover:underline font-medium">Xóa dữ liệu (/data-deletion)</a>
+                  </div>
+                </div>
+
+                <!-- Khối trực quan kiến trúc vận hành AI & Kết nối đa nền tảng -->
+                <div class="lg:col-span-5">
+                  <div class="rounded-2xl bg-[#070d20]/90 border border-cyan-400/25 p-5 sm:p-6 shadow-cyan-sm animate-float-slow space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-3.5">
+                      <div>
+                        <p class="text-xs font-mono uppercase tracking-wider text-cyan-300">Workflow Overview</p>
+                        <p class="font-display font-bold text-white text-base mt-0.5">Chu trình làm việc SIÊU ĐĂNG AI</p>
+                      </div>
+                      <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono bg-purple-500/15 text-purple-300 border border-purple-400/30">
+                        v1.x
+                      </span>
+                    </div>
+
+                    <div class="space-y-3">
+                      <div class="p-3.5 rounded-xl bg-slate-900/85 border border-slate-800/90 flex items-start gap-3">
+                        <span class="w-7 h-7 rounded-lg bg-cyan-400/15 border border-cyan-400/30 text-cyan-300 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">01</span>
+                        <div>
+                          <p class="text-sm font-semibold text-white">Hỗ trợ sáng tạo nội dung</p>
+                          <p class="text-xs text-slate-400 mt-0.5 leading-relaxed">Gợi ý cấu trúc kịch bản, tiêu đề, mô tả ngắn và biến thể thông điệp phù hợp từng nhóm khán giả.</p>
+                        </div>
+                      </div>
+
+                      <div class="p-3.5 rounded-xl bg-slate-900/85 border border-slate-800/90 flex items-start gap-3">
+                        <span class="w-7 h-7 rounded-lg bg-blue-500/15 border border-blue-400/30 text-blue-300 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">02</span>
+                        <div>
+                          <p class="text-sm font-semibold text-white">Quản lý &amp; điều phối lịch đăng</p>
+                          <p class="text-xs text-slate-400 mt-0.5 leading-relaxed">Sắp xếp bản nháp, trạng thái phê duyệt, khung giờ đăng tải và phân loại chiến dịch tập trung.</p>
+                        </div>
+                      </div>
+
+                      <div class="p-3.5 rounded-xl bg-slate-900/85 border border-slate-800/90 flex items-start gap-3">
+                        <span class="w-7 h-7 rounded-lg bg-purple-500/15 border border-purple-400/30 text-purple-300 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">03</span>
+                        <div>
+                          <p class="text-sm font-semibold text-white">Kết nối nền tảng &amp; đăng tải có kiểm soát</p>
+                          <p class="text-xs text-slate-400 mt-0.5 leading-relaxed">Kết nối tài khoản theo sự ủy quyền chủ động của người dùng và hỗ trợ quản lý/thu hồi quyền linh hoạt.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="pt-2 flex items-center justify-between text-xs text-slate-400">
+                      <span>Hỗ trợ trực tiếp:</span>
+                      <a href="mailto:hannk.designer@gmail.com" class="font-mono text-cyan-300 hover:underline">hannk.designer@gmail.com</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Mục đích và chức năng cốt lõi của phần mềm -->
+            <section class="space-y-6">
+              <div class="max-w-3xl">
+                <p class="text-xs font-mono uppercase tracking-wider text-cyan-300">Mục đích &amp; chức năng</p>
+                <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">
+                  Ba trụ cột vận hành của SIÊU ĐĂNG AI
+                </h2>
+                <p class="text-sm sm:text-base text-slate-400 mt-2 leading-relaxed">
+                  Phần mềm được xây dựng nhằm giảm thao tác thủ công lặp lại trong quá trình chuẩn bị, sắp xếp và xuất bản nội dung số mà vẫn giữ quyền kiểm soát chủ động ở người sử dụng.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Tính năng 1 -->
+                <article class="rounded-2xl glass-card glass-card-hover p-6 flex flex-col justify-between space-y-4">
+                  <div class="space-y-3">
+                    <div class="w-11 h-11 rounded-xl bg-cyan-400/15 border border-cyan-400/30 flex items-center justify-center text-cyan-300">
+                      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l2.2 4.6L19 9.8l-4.8 2.2L12 16.6l-2.2-4.6L5 9.8l4.8-2.2L12 3z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 16l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z" />
+                      </svg>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-white">Hỗ trợ sáng tạo nội dung</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                      Hỗ trợ lên ý tưởng chủ đề, phác thảo dàn ý video hoặc bài đăng, viết chú thích (caption) và gợi ý từ khóa/hashtag theo ngữ cảnh để người dùng biên tập lại theo phong cách riêng.
+                    </p>
+                  </div>
+                  <p class="text-xs text-cyan-300/90 font-medium">Người dùng luôn giữ quyền rà soát và phê duyệt nội dung cuối cùng.</p>
+                </article>
+
+                <!-- Tính năng 2 -->
+                <article class="rounded-2xl glass-card glass-card-hover p-6 flex flex-col justify-between space-y-4">
+                  <div class="space-y-3">
+                    <div class="w-11 h-11 rounded-xl bg-blue-500/15 border border-blue-400/30 flex items-center justify-center text-blue-300">
+                      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <rect x="3" y="4" width="18" height="16" rx="2" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M8 2v4m8-4v4" />
+                      </svg>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-white">Quản lý nội dung tập trung</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                      Tổ chức danh sách bài đăng/video theo trạng thái nháp, chờ duyệt, đã lên lịch hoặc đã đăng tải; giúp đội ngũ hoặc nhà sáng tạo theo dõi tiến độ chiến dịch rõ ràng.
+                    </p>
+                  </div>
+                  <p class="text-xs text-blue-300/90 font-medium">Hạn chế thất lạc tài liệu và nhầm lẫn lịch xuất bản.</p>
+                </article>
+
+                <!-- Tính năng 3 -->
+                <article class="rounded-2xl glass-card glass-card-hover p-6 flex flex-col justify-between space-y-4">
+                  <div class="space-y-3">
+                    <div class="w-11 h-11 rounded-xl bg-purple-500/15 border border-purple-400/30 flex items-center justify-center text-purple-300">
+                      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 010 5.656l-3 3a4 4 0 01-5.656-5.656l1.172-1.172" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.172 13.828a4 4 0 010-5.656l3-3a4 4 0 015.656 5.656l-1.172 1.172" />
+                      </svg>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-white">Kết nối nền tảng mạng xã hội</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                      Khi người dùng chủ động cấp quyền kết nối tài khoản nền tảng bên thứ ba, hệ thống hỗ trợ chuẩn bị và gửi yêu cầu đăng tải nội dung theo phạm vi quyền được cho phép.
+                    </p>
+                  </div>
+                  <p class="text-xs text-purple-300/90 font-medium">Tuân thủ điều khoản và quy định cộng đồng của từng nền tảng liên kết.</p>
+                </article>
+              </div>
+            </section>
+
+            <!-- Lợi ích dành cho người dùng -->
+            <section class="rounded-3xl glass-card p-6 sm:p-10 space-y-6">
+              <div class="max-w-3xl">
+                <p class="text-xs font-mono uppercase tracking-wider text-purple-300">Giá trị mang lại</p>
+                <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">
+                  Lợi ích thiết thực cho từng nhóm người dùng
+                </h2>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="rounded-2xl bg-slate-900/75 border border-slate-800/90 p-5 space-y-2.5">
+                  <span class="inline-block text-xs font-semibold px-2.5 py-1 rounded-md bg-cyan-500/15 text-cyan-300">Nhà sáng tạo nội dung</span>
+                  <h3 class="font-display font-bold text-white text-base">Duy trì nhịp đăng ổn định</h3>
+                  <p class="text-sm text-slate-300 leading-relaxed">
+                    Giảm áp lực ý tưởng hàng ngày, chuẩn bị trước chuỗi nội dung theo chủ đề và tập trung nhiều hơn vào chất lượng hình ảnh, âm thanh và tương tác cộng đồng.
+                  </p>
+                </div>
+
+                <div class="rounded-2xl bg-slate-900/75 border border-slate-800/90 p-5 space-y-2.5">
+                  <span class="inline-block text-xs font-semibold px-2.5 py-1 rounded-md bg-blue-500/15 text-blue-300">Cá nhân kinh doanh &amp; Freelancer</span>
+                  <h3 class="font-display font-bold text-white text-base">Tiết kiệm thời gian vận hành</h3>
+                  <p class="text-sm text-slate-300 leading-relaxed">
+                    Quản lý các bản nháp giới thiệu sản phẩm, dịch vụ hoặc chia sẻ kiến thức trên một giao diện thống nhất thay vì thao tác rời rạc.
+                  </p>
+                </div>
+
+                <div class="rounded-2xl bg-slate-900/75 border border-slate-800/90 p-5 space-y-2.5">
+                  <span class="inline-block text-xs font-semibold px-2.5 py-1 rounded-md bg-purple-500/15 text-purple-300">Doanh nghiệp &amp; Đội ngũ marketing</span>
+                  <h3 class="font-display font-bold text-white text-base">Chuẩn hóa quy trình phối hợp</h3>
+                  <p class="text-sm text-slate-300 leading-relaxed">
+                    Dễ dàng rà soát nội dung trước khi xuất bản, đồng bộ thông điệp thương hiệu và lưu vết các yêu cầu hỗ trợ hoặc xóa dữ liệu khi cần.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Cam kết minh bạch và bảo vệ dữ liệu -->
+            <section class="rounded-3xl bg-gradient-to-br from-[#0c1736]/90 via-[#081026]/95 to-[#120d29]/90 border border-cyan-400/25 p-6 sm:p-10 space-y-6">
+              <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                <div class="max-w-3xl space-y-2">
+                  <p class="text-xs font-mono uppercase tracking-wider text-cyan-300">Minh bạch &amp; An toàn thông tin</p>
+                  <h2 class="font-display text-2xl sm:text-3xl font-bold text-white">
+                    Cam kết minh bạch và bảo vệ dữ liệu
+                  </h2>
+                  <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                    SIÊU ĐĂNG AI cam kết trình bày rõ ràng phạm vi xử lý thông tin, tôn trọng quyền riêng tư của người dùng và công khai đầy đủ các trang chính sách để người dùng cũng như nền tảng đối tác dễ dàng tra cứu.
+                  </p>
+                </div>
+                <div class="shrink-0">
+                  <a href="#/data-deletion" data-route="/data-deletion" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-cyan-200 bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-400/35 transition-colors">
+                    <span>Quy trình xóa dữ liệu</span>
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <div class="p-4 rounded-2xl bg-slate-950/60 border border-slate-800/90 space-y-1.5">
+                  <p class="font-semibold text-white">1. Không suy diễn hoặc khẳng định chưa kiểm chứng</p>
+                  <p class="text-slate-300 leading-relaxed">
+                    Những chi tiết kỹ thuật phụ thuộc vào cấu hình máy chủ thực tế (như thuật toán mã hóa token, thời gian lưu log hoặc nhà cung cấp hạ tầng lưu trữ) đều được đánh dấu rõ ${unverifiedBadge()} để chủ sở hữu đối chiếu với mã nguồn thực tế.
+                  </p>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-slate-950/60 border border-slate-800/90 space-y-1.5">
+                  <p class="font-semibold text-white">2. Quyền chủ động kết nối và thu hồi</p>
+                  <p class="text-slate-300 leading-relaxed">
+                    Việc kết nối tài khoản mạng xã hội chỉ diễn ra khi người dùng chủ động thực hiện và cấp quyền. Người dùng có thể gửi yêu cầu xóa dữ liệu hoặc thu hồi quyền truy cập trên nền tảng liên kết bất kỳ lúc nào.
+                  </p>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-slate-950/60 border border-slate-800/90 space-y-1.5">
+                  <p class="font-semibold text-white">3. Công khai tài liệu pháp lý dễ truy cập</p>
+                  <p class="text-slate-300 leading-relaxed">
+                    Các trang Điều khoản sử dụng, Chính sách bảo mật và Xóa dữ liệu người dùng được mở công khai trực tiếp trên trình duyệt mà không bắt buộc đăng nhập hay cài đặt ứng dụng bổ sung.
+                  </p>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-slate-950/60 border border-slate-800/90 space-y-1.5">
+                  <p class="font-semibold text-white">4. Kênh tiếp nhận phản hồi trực tiếp</p>
+                  <p class="text-slate-300 leading-relaxed">
+                    Mọi thắc mắc về sản phẩm, quyền riêng tư hoặc yêu cầu xử lý dữ liệu đều có thể gửi tới email chính thức <a href="mailto:${SUPPORT_EMAIL}" class="font-mono text-cyan-300 hover:underline">${SUPPORT_EMAIL}</a>.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Thông tin liên hệ nhanh -->
+            <section class="rounded-3xl glass-card p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div class="space-y-1.5">
+                <p class="text-xs font-mono uppercase tracking-wider text-cyan-300">Thông tin liên hệ chính thức</p>
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-white">SIÊU ĐĂNG AI</h2>
+                <p class="text-sm text-slate-300">
+                  Email hỗ trợ: <a href="mailto:${SUPPORT_EMAIL}" class="font-mono text-cyan-300 hover:underline">${SUPPORT_EMAIL}</a>
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-3">
+                <a href="#/contact" data-route="/contact" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-950 bg-cyan-300 hover:bg-cyan-200 transition-colors">
+                  Mở form liên hệ
+                </a>
+                <a href="#/terms" data-route="/terms" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-200 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 transition-colors">
+                  Điều khoản sử dụng
+                </a>
+              </div>
+            </section>
+          </div>
+        `;
+      }
+
+      /**
+       * 2. TRANG ĐIỀU KHOẢN SỬ DỤNG (/terms) — Đủ 10 mục bắt buộc
+       */
+      function renderTermsView() {
+        const sections = [
+          {
+            num: '01',
+            title: 'Giới thiệu dịch vụ',
+            body: `
+              <p>Chào mừng bạn đến với <strong>SIÊU ĐĂNG AI</strong>. Tài liệu Điều khoản sử dụng này quy định các điều kiện áp dụng khi bạn truy cập website thông tin/pháp lý hoặc sử dụng phần mềm SIÊU ĐĂNG AI hỗ trợ sáng tạo, quản lý và đăng tải nội dung mạng xã hội.</p>
+              <p>Dịch vụ hướng đến cá nhân, nhà sáng tạo nội dung và doanh nghiệp. Một số tính năng kết nối hoặc xuất bản tự động/bán tự động có thể phụ thuộc vào phiên bản phần mềm, gói sử dụng hoặc sự chấp thuận quyền API từ các nền tảng bên thứ ba ${unverifiedBadge()}.</p>
+            `,
+          },
+          {
+            num: '02',
+            title: 'Quyền và nghĩa vụ người dùng',
+            body: `
+              <p><strong>Quyền của người dùng:</strong> Được sử dụng các tính năng khả dụng của SIÊU ĐĂNG AI phù hợp với mục đích hợp pháp; được tiếp cận thông tin về điều khoản, chính sách bảo mật và quy trình xóa dữ liệu; được liên hệ hỗ trợ qua email <a href="mailto:${SUPPORT_EMAIL}" class="text-cyan-300 hover:underline">${SUPPORT_EMAIL}</a>.</p>
+              <p><strong>Nghĩa vụ của người dùng:</strong> Cung cấp thông tin chính xác khi đăng ký hoặc liên hệ; chịu trách nhiệm đối với toàn bộ nội dung do bạn tạo, tải lên, lên lịch hoặc yêu cầu đăng tải thông qua hệ thống; tuân thủ pháp luật hiện hành và điều khoản của nền tảng mạng xã hội đích.</p>
+            `,
+          },
+          {
+            num: '03',
+            title: 'Quy định về tài khoản',
+            body: `
+              <p>Nếu dịch vụ yêu cầu tài khoản người dùng để lưu trữ bản nháp, lịch đăng hoặc cấu hình kết nối ${unverifiedBadge()}, bạn có trách nhiệm bảo mật thông tin đăng nhập của mình và thông báo sớm cho <a href="mailto:${SUPPORT_EMAIL}" class="text-cyan-300 hover:underline">${SUPPORT_EMAIL}</a> nếu nghi ngờ truy cập trái phép.</p>
+              <p>SIÊU ĐĂNG AI có quyền tạm ngừng hoặc giới hạn quyền truy cập tài khoản nếu phát hiện hành vi vi phạm điều khoản sử dụng, gây rủi ro bảo mật hoặc lạm dụng tài nguyên hệ thống.</p>
+            `,
+          },
+          {
+            num: '04',
+            title: 'Quy định sử dụng API và kết nối nền tảng bên thứ ba',
+            body: `
+              <p>Khi bạn kết nối tài khoản của mình với nền tảng bên thứ ba (ví dụ: TikTok hoặc các mạng xã hội được hỗ trợ ${unverifiedBadge()}), việc trao đổi dữ liệu và đăng tải nội dung diễn ra thông qua cơ chế ủy quyền và giao diện lập trình ứng dụng (API) của nền tảng tương ứng.</p>
+              <p>Bạn hiểu rằng việc kết nối, duy trì hoặc thực thi một hành động đăng tải có thể bị gián đoạn hoặc từ chối nếu nền tảng bên thứ ba thay đổi chính sách API, giới hạn tần suất (rate limit), thu hồi quyền truy cập hoặc yêu cầu kiểm duyệt ứng dụng.</p>
+            `,
+          },
+          {
+            num: '05',
+            title: 'Quyền sở hữu trí tuệ',
+            body: `
+              <p>Thương hiệu <strong>SIÊU ĐĂNG AI</strong>, logo, giao diện website, mã nguồn, tài liệu hướng dẫn và cấu trúc hệ thống thuộc quyền sở hữu hoặc quyền sử dụng hợp pháp của chủ sở hữu SIÊU ĐĂNG AI ${unverifiedBadge()}.</p>
+              <p>Đối với nội dung do người dùng cung cấp hoặc tạo ra (văn bản, hình ảnh, video, tài liệu thương hiệu), quyền sở hữu trí tuệ thuộc về bạn hoặc bên cấp phép hợp pháp của bạn. Bằng việc đưa nội dung vào hệ thống để xử lý hoặc đăng tải theo yêu cầu, bạn cấp cho SIÊU ĐĂNG AI quyền vận hành kỹ thuật cần thiết để thực hiện chức năng bạn đã chọn.</p>
+            `,
+          },
+          {
+            num: '06',
+            title: 'Quy định về nội dung đăng tải',
+            body: `
+              <p>Người dùng cam kết mọi nội dung soạn thảo, quản lý hoặc đăng tải thông qua SIÊU ĐĂNG AI đều hợp pháp, không xâm phạm bản quyền, nhãn hiệu, bí mật kinh doanh, quyền riêng tư hoặc danh dự của tổ chức, cá nhân khác.</p>
+              <p>Nội dung phải tuân thủ Tiêu chuẩn cộng đồng và chính sách quảng cáo/nội dung của từng nền tảng mạng xã hội mà bạn lựa chọn xuất bản. Bạn tự chịu trách nhiệm hoàn toàn về tính chính xác, nguồn gốc và hậu quả pháp lý của nội dung đăng tải.</p>
+            `,
+          },
+          {
+            num: '07',
+            title: 'Các hành vi bị nghiêm cấm',
+            body: `
+              <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
+                <li>Sử dụng SIÊU ĐĂNG AI để phát tán nội dung vi phạm pháp luật, lừa đảo, mạo danh, kích động bạo lực, quấy rối, xâm hại hoặc thông tin sai lệch gây hại.</li>
+                <li>Gửi thư rác (spam), thao túng tương tác trái quy định nền tảng hoặc sử dụng công cụ tự động gây quá tải, tấn công từ chối dịch vụ (DDoS) lên hệ thống.</li>
+                <li>Cố tình truy cập trái phép, dò quét lỗ hổng, can thiệp vào mã nguồn, token hoặc dữ liệu của người dùng khác.</li>
+                <li>Sao chép, bán lại, cho thuê hoặc khai thác thương mại trái phép phần mềm/tài liệu khi chưa có sự đồng ý bằng văn bản từ chủ sở hữu SIÊU ĐĂNG AI.</li>
+              </ul>
+            `,
+          },
+          {
+            num: '08',
+            title: 'Giới hạn trách nhiệm',
+            body: `
+              <p>Dịch vụ và các thông tin trên website được cung cấp trên cơ sở "hiện trạng" (as-is) và "tùy theo mức độ sẵn sàng" (as-available) ${unverifiedBadge()}. Trong phạm vi tối đa pháp luật cho phép, SIÊU ĐĂNG AI không chịu trách nhiệm đối với các thiệt hại gián tiếp, ngẫu nhiên, mất lợi nhuận, mất dữ liệu hoặc gián đoạn kinh doanh phát sinh từ việc sử dụng hoặc không thể sử dụng dịch vụ.</p>
+              <p>SIÊU ĐĂNG AI không kiểm soát và không chịu trách nhiệm thay cho các thay đổi chính sách, thuật toán phân phối, kiểm duyệt nội dung hoặc sự cố kỹ thuật phía nền tảng mạng xã hội bên thứ ba.</p>
+            `,
+          },
+          {
+            num: '09',
+            title: 'Thay đổi dịch vụ và điều khoản',
+            body: `
+              <p>SIÊU ĐĂNG AI có thể cập nhật, cải tiến, tạm ngưng hoặc điều chỉnh tính năng dịch vụ cũng như nội dung Điều khoản sử dụng này nhằm phản ánh thay đổi về sản phẩm, yêu cầu pháp lý hoặc quy định của nền tảng đối tác.</p>
+              <p>Phiên bản cập nhật sẽ được công bố công khai trên trang này. Việc bạn tiếp tục sử dụng dịch vụ sau khi điều khoản có hiệu lực đồng nghĩa với việc bạn chấp nhận các nội dung cập nhật đó.</p>
+            `,
+          },
+          {
+            num: '10',
+            title: 'Thông tin liên hệ',
+            body: `
+              <p>Nếu bạn có câu hỏi, phản hồi hoặc cần hỗ trợ liên quan đến Điều khoản sử dụng của <strong>SIÊU ĐĂNG AI</strong>, vui lòng liên hệ qua kênh chính thức:</p>
+              <div class="mt-3 p-4 rounded-xl bg-slate-900/85 border border-slate-800 text-sm">
+                <p><strong class="text-white">Tên sản phẩm / thương hiệu:</strong> SIÊU ĐĂNG AI</p>
+                <p class="mt-1"><strong class="text-white">Email hỗ trợ chính thức:</strong> <a href="mailto:${SUPPORT_EMAIL}" class="font-mono text-cyan-300 hover:underline">${SUPPORT_EMAIL}</a></p>
+              </div>
+            `,
+          },
+        ];
+
+        return `
+          <div class="view-enter space-y-8">
+            ${renderPageHero({
+              badge: 'Tài liệu pháp lý công khai · /terms',
+              title: 'Điều khoản sử dụng',
+              highlight: 'SIÊU ĐĂNG AI',
+              subtitle: 'Quy định phạm vi sử dụng phần mềm hỗ trợ sáng tạo, quản lý và đăng tải nội dung mạng xã hội dành cho cá nhân, nhà sáng tạo nội dung và doanh nghiệp.',
+              metaItems: [
+                { label: 'Đơn vị / Sản phẩm', value: 'SIÊU ĐĂNG AI' },
+                { label: 'Email hỗ trợ', value: `<a href="mailto:${SUPPORT_EMAIL}" class="font-mono text-cyan-300 hover:underline">${SUPPORT_EMAIL}</a>` },
+                { label: 'Trạng thái công bố', value: 'Truy cập công khai' },
+              ],
+            })}
+
+            <!-- Mục lục nhanh -->
+            <div class="rounded-2xl glass-card p-5">
+              <p class="text-xs font-mono uppercase tracking-wider text-cyan-300 mb-3">Mục lục 10 điều khoản</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2 text-xs">
+                ${sections.map(s => `
+                  <a href="#terms-sec-${s.num}" class="px-3 py-2 rounded-lg bg-slate-900/75 hover:bg-slate-800 text-slate-300 hover:text-cyan-300 border border-slate-800/80 transition-colors truncate">
+                    ${s.num}. ${escapeHtml(s.title)}
+                  </a>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Danh sách 10 điều khoản -->
+            <div class="space-y-5">
+              ${sections.map(sec => `
+                <article id="terms-sec-${sec.num}" class="rounded-2xl glass-card p-6 sm:p-7 space-y-3 scroll-mt-24">
+                  <div class="flex items-baseline gap-3">
+                    <span class="font-mono text-xs font-bold px-2.5 py-1 rounded-md bg-cyan-400/15 text-cyan-300 border border-cyan-400/30">
+                      ĐIỀU ${sec.num}
+                    </span>
+                    <h2 class="font-display text-lg sm:text-xl font-bold text-white">
+                      ${escapeHtml(sec.title)}
+                    </h2>
+                  </div>
+                  <div class="text-sm text-slate-300 leading-relaxed space-y-2.5 pl-0 sm:pl-1">
+                    ${sec.body}
+                  </div>
+                </article>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      /**
+       * 3. TRANG CHÍNH SÁCH BẢO MẬT (/privacy) — Đủ 11 mục bắt buộc + đánh dấu rõ thông tin cần chủ sở hữu xác nhận
+       */
+      function renderPrivacyView() {
+        const sections = [
+          {
+            num: '01',
+            title: 'Các loại dữ liệu có thể được thu thập',
+            body: `
+              <p>Tùy theo cách bạn tương tác với website và phần mềm <strong>SIÊU ĐĂNG AI</strong>, hệ thống có thể tiếp nhận hoặc xử lý các nhóm dữ liệu sau ${unverifiedBadge()}:</p>
+              <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
+                <li><strong>Thông tin tài khoản &amp; liên hệ:</strong> Tên hiển thị, địa chỉ email (ví dụ khi gửi yêu cầu hỗ trợ hoặc đăng ký tài khoản nếu có), nội dung tin nhắn liên hệ.</li>
+                <li><strong>Dữ liệu nội dung do người dùng tạo/nhập:</strong> Văn bản nháp, ý tưởng kịch bản, mô tả, lịch xuất bản, tệp media hoặc thông tin chiến dịch mà bạn chủ động đưa vào công cụ.</li>
+                <li><strong>Dữ liệu kỹ thuật &amp; nhật ký vận hành:</strong> Loại trình duyệt, thời điểm truy cập, nhật ký lỗi hệ thống hoặc thông tin chẩn đoán phục vụ ổn định dịch vụ ${unverifiedBadge()}.</li>
+              </ul>
+            `,
+          },
+          {
+            num: '02',
+            title: 'Dữ liệu tài khoản TikTok nếu người dùng chủ động kết nối',
+            body: `
+              <p>Nếu bạn chủ động lựa chọn kết nối tài khoản TikTok với <strong>SIÊU ĐĂNG AI</strong>, phạm vi dữ liệu được truy cập hoặc trao đổi sẽ phụ thuộc vào các quyền (scopes) mà bạn xác nhận trên màn hình cấp quyền của TikTok cũng như cấu hình thực tế của ứng dụng ${unverifiedBadge()}.</p>
+              <p>Ví dụ, tùy theo phạm vi được cấp phép, hệ thống có thể làm việc với mã định danh kết nối tài khoản, thông tin hồ sơ cơ bản được phép chia sẻ hoặc dữ liệu phục vụ việc tải lên/xuất bản nội dung theo yêu cầu của bạn ${unverifiedBadge()}. SIÊU ĐĂNG AI chỉ xử lý dữ liệu nằm trong phạm vi cần thiết cho chức năng bạn đã chọn.</p>
+            `,
+          },
+          {
+            num: '03',
+            title: 'Mục đích sử dụng dữ liệu',
+            body: `
+              <p>Dữ liệu được tiếp nhận hoặc xử lý nhằm các mục đích sau:</p>
+              <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
+                <li>Cung cấp, duy trì và vận hành các chức năng hỗ trợ sáng tạo, quản lý nội dung và kết nối đăng tải của SIÊU ĐĂNG AI.</li>
+                <li>Thực hiện các thao tác xuất bản hoặc quản lý nội dung theo chỉ định chủ động của người dùng.</li>
+                <li>Phản hồi yêu cầu hỗ trợ, giải đáp thắc mắc hoặc xử lý yêu cầu truy cập/xóa dữ liệu gửi tới <a href="mailto:${SUPPORT_EMAIL}" class="text-cyan-300 hover:underline">${SUPPORT_EMAIL}</a>.</li>
+                <li>Duy trì tính ổn định, khắc phục lỗi kỹ thuật, ngăn chặn hành vi lạm dụng và tuân thủ nghĩa vụ pháp lý áp dụng.</li>
+              </ul>
+            `,
+          },
+          {
+            num: '04',
+            title: 'Cách thức xử lý Access Token và Refresh Token',
+            body: `
+              <p>Khi kết nối OAuth với nền tảng bên thứ ba có sử dụng Access Token và/hoặc Refresh Token, cơ chế lưu trữ, làm mới token (refresh) và phạm vi sử dụng token cần được xác thực trực tiếp theo mã nguồn backend thực tế của SIÊU ĐĂNG AI ${unverifiedBadge()}.</p>
+              <p>Nguyên tắc công bố của chính sách này là: không suy diễn rằng token không bao giờ được lưu hoặc luôn được lưu theo một kiến trúc cụ thể khi chưa đối chiếu mã nguồn thực tế. Chủ sở hữu cần xác nhận ${unverifiedBadge()} cách token được lưu trữ (ví dụ trên máy chủ/cơ sở dữ liệu hay phiên làm việc), điều kiện tự động làm mới và cách hủy/xóa token khi người dùng ngắt kết nối hoặc yêu cầu xóa dữ liệu.</p>
+            `,
+          },
+          {
+            num: '05',
+            title: 'Phương thức bảo vệ thông tin xác thực',
+            body: `
+              <p>Chúng tôi coi trọng việc bảo vệ thông tin xác thực và dữ liệu người dùng. Tuy nhiên, website này không tự khẳng định các cơ chế bảo mật cụ thể (như chuẩn mã hóa cụ thể, phân quyền khóa, kiểm thử xâm nhập hoặc chứng nhận bảo mật bên thứ ba) nếu chưa được kiểm chứng trực tiếp trên môi trường triển khai thực tế ${unverifiedBadge()}.</p>
+              <p>Chủ sở hữu SIÊU ĐĂNG AI cần xác nhận và cập nhật ${unverifiedBadge()} các biện pháp kỹ thuật và tổ chức đang áp dụng (ví dụ truyền tải qua HTTPS, kiểm soát truy cập môi trường quản trị, tách biệt dữ liệu) để đảm bảo tính chính xác tuyệt đối với hệ thống vận hành.</p>
+            `,
+          },
+          {
+            num: '06',
+            title: 'Thời hạn lưu trữ dữ liệu',
+            body: `
+              <p>Dữ liệu chỉ được lưu giữ trong khoảng thời gian cần thiết để phục vụ mục đích đã nêu hoặc cho đến khi người dùng gửi yêu cầu xóa dữ liệu hợp lệ, trừ trường hợp pháp luật có quy định khác ${unverifiedBadge()}.</p>
+              <p>Thời hạn lưu trữ chi tiết đối với từng loại dữ liệu (nội dung nháp, nhật ký hệ thống, bản sao lưu hoặc dữ liệu liên kết tài khoản) cần được chủ sở hữu xác nhận cụ thể ${unverifiedBadge()} theo cấu hình hệ thống thực tế.</p>
+            `,
+          },
+          {
+            num: '07',
+            title: 'Chia sẻ dữ liệu với bên thứ ba',
+            body: `
+              <p>SIÊU ĐĂNG AI không rao bán thông tin cá nhân của người dùng. Việc chia sẻ hoặc truyền dữ liệu cho bên thứ ba (nếu có) chỉ phát sinh trong các trường hợp cần thiết cho vận hành dịch vụ hoặc theo quy định pháp luật ${unverifiedBadge()}, chẳng hạn:</p>
+              <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
+                <li>Nền tảng mạng xã hội đích khi người dùng chủ động kết nối và yêu cầu đăng tải/quản lý nội dung.</li>
+                <li>Nhà cung cấp hạ tầng lưu trữ, máy chủ hoặc dịch vụ kỹ thuật hỗ trợ vận hành ${unverifiedBadge()} — cần được chủ sở hữu liệt kê và xác nhận cụ thể.</li>
+                <li>Cơ quan nhà nước có thẩm quyền khi có yêu cầu hợp pháp theo quy định của pháp luật.</li>
+              </ul>
+            `,
+          },
+          {
+            num: '08',
+            title: 'Cookie và dữ liệu kỹ thuật',
+            body: `
+              <p>Website và ứng dụng web có thể sử dụng cookie, bộ nhớ cục bộ trình duyệt (localStorage/sessionStorage) hoặc dữ liệu kỹ thuật cơ bản để duy trì trạng thái giao diện, ghi nhớ tùy chọn điều hướng hoặc hỗ trợ phiên làm việc ${unverifiedBadge()}.</p>
+              <p>Người dùng có thể quản lý hoặc xóa cookie trực tiếp trong cài đặt trình duyệt của mình. Lưu ý rằng việc tắt một số cookie hoặc bộ nhớ cục bộ có thể ảnh hưởng đến trải nghiệm sử dụng một số tính năng.</p>
+            `,
+          },
+          {
+            num: '09',
+            title: 'Quyền truy cập, chỉnh sửa và yêu cầu xóa dữ liệu',
+            body: `
+              <p>Người dùng có quyền liên hệ để hỏi về thông tin liên quan đến tài khoản/dữ liệu của mình, đề nghị cập nhật hoặc chỉnh sửa thông tin không chính xác (trong phạm vi hỗ trợ của hệ thống), và gửi yêu cầu xóa dữ liệu.</p>
+              <p>Bạn có thể xem chi tiết cách thức gửi yêu cầu tại trang <a href="#/data-deletion" data-route="/data-deletion" class="text-cyan-300 hover:underline font-medium">Xóa dữ liệu người dùng (/data-deletion)</a> hoặc gửi email trực tiếp tới <a href="mailto:${SUPPORT_EMAIL}" class="text-cyan-300 hover:underline">${SUPPORT_EMAIL}</a>.</p>
+            `,
+          },
+          {
+            num: '10',
+            title: 'Quy trình thu hồi quyền truy cập TikTok',
+            body: `
+              <p>Nếu bạn đã kết nối tài khoản TikTok với ứng dụng, bạn có thể chủ động thu hồi quyền truy cập của ứng dụng trực tiếp trong cài đặt tài khoản TikTok của mình (mục quản lý ứng dụng / quyền truy cập của bên thứ ba trên ứng dụng hoặc web TikTok).</p>
+              <p>Sau khi thu hồi quyền trên TikTok, ứng dụng sẽ không còn được phép sử dụng quyền đã thu hồi đó. Bạn cũng có thể gửi yêu cầu xóa dữ liệu liên quan tại <a href="#/data-deletion" data-route="/data-deletion" class="text-cyan-300 hover:underline">Xóa dữ liệu người dùng (/data-deletion)</a> hoặc qua email <a href="mailto:${SUPPORT_EMAIL}" class="text-cyan-300 hover:underline">${SUPPORT_EMAIL}</a>.</p>
+            `,
+          },
+          {
+            num: '11',
+            title: 'Thông tin liên hệ về quyền riêng tư',
+            body: `
+              <p>Mọi câu hỏi, khiếu nại hoặc yêu cầu liên quan đến Chính sách bảo mật và quyền riêng tư của <strong>SIÊU ĐĂNG AI</strong> vui lòng gửi về:</p>
+              <div class="mt-3 p-4 rounded-xl bg-slate-900/85 border border-slate-800 text-sm">
+                <p><strong class="text-white">Đơn vị / Sản phẩm:</strong> SIÊU ĐĂNG AI</p>
+                <p class="mt-1"><strong class="text-white">Email quyền riêng tư &amp; hỗ trợ:</strong> <a href="mailto:${SUPPORT_EMAIL}" class="font-mono text-cyan-300 hover:underline">${SUPPORT_EMAIL}</a></p>
+              </div>
+            `,
+          },
+        ];
+
+        return `
+          <div class="view-enter space-y-8">
+            ${renderPageHero({
+              badge: 'Tài liệu pháp lý công khai · /privacy',
+              title: 'Chính sách bảo mật',
+              highlight: 'SIÊU ĐĂNG AI',
+              subtitle: 'Trình bày cách thức tiếp nhận, sử dụng, xử lý token, lưu trữ và bảo vệ dữ liệu liên quan đến SIÊU ĐĂNG AI, đồng thời đánh dấu minh bạch các điểm cần chủ sở hữu xác nhận với mã nguồn thực tế.',
+              metaItems: [
+                { label: 'Sản phẩm', value: 'SIÊU ĐĂNG AI' },
+                { label: 'Email liên hệ', value: `<a href="mailto:${SUPPORT_EMAIL}" class="font-mono text-cyan-300 hover:underline">${SUPPORT_EMAIL}</a>` },
+                { label: 'Nguyên tắc', value: 'Minh bạch · Không suy diễn kỹ thuật' },
+              ],
+            })}
+
+            <!-- Thông báo minh bạch về nhãn [CẦN CHỦ SỞ HỮU XÁC NHẬN] -->
+            <div class="rounded-2xl bg-amber-950/25 border border-amber-500/35 p-5 text-sm text-amber-100/95 space-y-2">
+              <p class="font-semibold text-amber-300 flex flex-wrap items-center gap-2">
+                <span>Thông báo kiểm chứng kỹ thuật trước khi công bố chính thức</span>
+                ${unverifiedBadge()}
+              </p>
+              <p class="text-slate-300 leading-relaxed">
+                Để bảo đảm tính trung thực và tránh đưa ra tuyên bố bảo mật chưa được xác minh, các đoạn có gắn nhãn <span class="font-mono text-xs text-amber-200">[CẦN CHỦ SỞ HỮU XÁC NHẬN]</span> cần được chủ sở hữu SIÊU ĐĂNG AI rà soát đối chiếu với kiến trúc hệ thống, cơ sở dữ liệu và mã nguồn thực tế.
+              </p>
+            </div>
+
+            <!-- Mục lục 11 phần -->
+            <div class="rounded-2xl glass-card p-5">
+              <p class="text-xs font-mono uppercase tracking-wider text-purple-300 mb-3">Mục lục 11 nội dung bảo mật</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 text-xs">
+                ${sections.map(s => `
+                  <a href="#privacy-sec-${s.num}" class="px-3 py-2 rounded-lg bg-slate-900/75 hover:bg-slate-800 text-slate-300 hover:text-cyan-300 border border-slate-800/80 transition-colors truncate">
+                    ${s.num}. ${escapeHtml(s.title)}
+                  </a>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Danh sách 11 mục -->
+            <div class="space-y-5">
+              ${sections.map(sec => `
+                <article id="privacy-sec-${sec.num}" class="rounded-2xl glass-card p-6 sm:p-7 space-y-3 scroll-mt-24">
+                  <div class="flex items-baseline gap-3">
+                    <span class="font-mono text-xs font-bold px-2.5 py-1 rounded-md bg-purple-500/15 text-purple-300 border border-purple-400/30">
+                      MỤC ${sec.num}
+                    </span>
+                    <h2 class="font-display text-lg sm:text-xl font-bold text-white">
+                      ${escapeHtml(sec.title)}
+                    </h2>
+                  </div>
+                  <div class="text-sm text-slate-300 leading-relaxed space-y-2.5">
+                    ${sec.body}
+                  </div>
+                </article>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      /**
+       * 4. TRANG XÓA DỮ LIỆU NGƯỜI DÙNG (/data-deletion)
+       */
+      function renderDataDeletionView() {
+        return `
+          <div class="view-enter space-y-8">
+            ${renderPageHero({
+              badge: 'Quyền kiểm soát dữ liệu · /data-deletion',
+              title: 'Xóa dữ liệu người dùng',
+              highlight: 'SIÊU ĐĂNG AI',
+              subtitle: 'Hướng dẫn chi tiết cách gửi yêu cầu xóa tài khoản và dữ liệu liên quan đến SIÊU ĐĂNG AI, quy trình xác minh, thời hạn xử lý dự kiến và cách thu hồi quyền ứng dụng từ TikTok.',
+              metaItems: [
+                { label: 'Email tiếp nhận yêu cầu', value: `<a href="mailto:${SUPPORT_EMAIL}" class="font-mono text-cyan-300 hover:underline">${SUPPORT_EMAIL}</a>` },
+                { label: 'Truy cập trang', value: 'Công khai trực tiếp' },
+              ],
+            })}
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              <!-- Cột hướng dẫn chính -->
+              <div class="lg:col-span-8 space-y-6">
+
+                <!-- 1. Hướng dẫn yêu cầu xóa tài khoản và dữ liệu -->
+                <section class="rounded-2xl glass-card p-6 sm:p-7 space-y-3">
+                  <h2 class="font-display text-xl font-bold text-white flex items-center gap-2.5">
+                    <span class="w-7 h-7 rounded-lg bg-cyan-400/15 border border-cyan-400/30 text-cyan-300 font-mono text-xs flex items-center justify-center">1</span>
+                    <span>Hướng dẫn yêu cầu xóa tài khoản và dữ liệu</span>
+                  </h2>
+                  <p class="text-sm text-slate-300 leading-relaxed">
+                    Người dùng có thể yêu cầu xóa tài khoản (nếu có) và các dữ liệu liên quan do <strong>SIÊU ĐĂNG AI</strong> lưu trữ hoặc quản lý theo các bước sau:
+                  </p>
+                  <ol class="list-decimal pl-5 space-y-2 text-sm text-slate-300 leading-relaxed">
+                    <li>Gửi email đến địa chỉ chính thức <a href="mailto:${SUPPORT_EMAIL}?subject=%5BY%C3%AAu%20c%E1%BA%A7u%20x%C3%B3a%20d%E1%BB%AF%20li%E1%BB%87u%5D%20SI%C3%8AU%20%C4%90%C4%82NG%20AI" class="font-mono text-cyan-300 hover:underline">${SUPPORT_EMAIL}</a> với tiêu đề: <code class="px-1.5 py-0.5 rounded bg-slate-900 text-cyan-200">[Yêu cầu xóa dữ liệu] SIÊU ĐĂNG AI</code>.</li>
+                    <li>Cung cấp địa chỉ email hoặc thông tin định danh tài khoản đã sử dụng trên SIÊU ĐĂNG AI (và tên/ID tài khoản nền tảng liên kết nếu bạn muốn xóa dữ liệu gắn với kết nối đó).</li>
+                    <li>Nêu rõ phạm vi yêu cầu: xóa toàn bộ tài khoản và dữ liệu liên quan, hay chỉ xóa dữ liệu gắn với một kết nối nền tảng cụ thể.</li>
+                  </ol>
+                </section>
+
+                <!-- 2. Quy trình xác minh yêu cầu -->
+                <section class="rounded-2xl glass-card p-6 sm:p-7 space-y-3">
+                  <h2 class="font-display text-xl font-bold text-white flex items-center gap-2.5">
+                    <span class="w-7 h-7 rounded-lg bg-blue-500/15 border border-blue-400/30 text-blue-300 font-mono text-xs flex items-center justify-center">2</span>
+                    <span>Quy trình xác minh yêu cầu</span>
+                  </h2>
+                  <p class="text-sm text-slate-300 leading-relaxed">
+                    Để bảo vệ người dùng khỏi các yêu cầu xóa dữ liệu trái phép hoặc mạo danh, đội ngũ hỗ trợ thực hiện kiểm tra trước khi xóa:
+                  </p>
+                  <ul class="list-disc pl-5 space-y-1.5 text-sm text-slate-300 leading-relaxed">
+                    <li>Đối chiếu thông tin yêu cầu với địa chỉ email hoặc dữ liệu tài khoản được cung cấp.</li>
+                    <li>Trong trường hợp cần bổ sung thông tin để xác nhận quyền sở hữu tài khoản/yêu cầu ${unverifiedBadge()}, chúng tôi có thể phản hồi qua email <a href="mailto:${SUPPORT_EMAIL}" class="text-cyan-300 hover:underline">${SUPPORT_EMAIL}</a> để xác minh.</li>
+                    <li>Sau khi xác minh hợp lệ, yêu cầu được chuyển sang bước thực thi xóa dữ liệu và thông báo kết quả cho người gửi.</li>
+                  </ul>
+                </section>
+
+                <!-- 3. Thời hạn xử lý dự kiến -->
+                <section class="rounded-2xl glass-card p-6 sm:p-7 space-y-3">
+                  <h2 class="font-display text-xl font-bold text-white flex items-center gap-2.5">
+                    <span class="w-7 h-7 rounded-lg bg-purple-500/15 border border-purple-400/30 text-purple-300 font-mono text-xs flex items-center justify-center">3</span>
+                    <span>Thời hạn xử lý dự kiến</span>
+                  </h2>
+                  <p class="text-sm text-slate-300 leading-relaxed">
+                    Yêu cầu gửi tới <a href="mailto:${SUPPORT_EMAIL}" class="text-cyan-300 hover:underline">${SUPPORT_EMAIL}</a> sẽ được tiếp nhận và xử lý trong thời gian sớm nhất có thể ${unverifiedBadge('THỜI HẠN CỤ THỂ CẦN CHỦ SỞ HỮU XÁC NHẬN')}.
+                  </p>
+                  <p class="text-sm text-slate-300 leading-relaxed">
+                    Chủ sở hữu SIÊU ĐĂNG AI cần xác nhận mốc thời gian cam kết cụ thể (ví dụ số ngày làm việc dự kiến để hoàn tất xóa trên cơ sở dữ liệu chính và chu kỳ dọn dẹp bản sao lưu nếu có) ${unverifiedBadge()} trước khi công bố chính thức.
+                  </p>
+                </section>
+
+                <!-- 4. Dữ liệu có thể cần giữ lại theo quy định pháp luật -->
+                <section class="rounded-2xl glass-card p-6 sm:p-7 space-y-3">
+                  <h2 class="font-display text-xl font-bold text-white flex items-center gap-2.5">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500/15 border border-amber-400/30 text-amber-300 font-mono text-xs flex items-center justify-center">4</span>
+                    <span>Dữ liệu có thể cần giữ lại theo quy định pháp luật</span>
+                  </h2>
+                  <p class="text-sm text-slate-300 leading-relaxed">
+                    Ngay cả khi tài khoản hoặc dữ liệu người dùng được xóa theo yêu cầu, một số thông tin tối thiểu có thể cần được giữ lại tạm thời hoặc theo quy định hiện hành ${unverifiedBadge()}:
+                  </p>
+                  <ul class="list-disc pl-5 space-y-1.5 text-sm text-slate-300 leading-relaxed">
+                    <li>Hồ sơ hoặc chứng từ giao dịch/thanh toán/kế toán nếu phát sinh nghĩa vụ lưu trữ theo quy định pháp luật về thuế hoặc kế toán (nếu có áp dụng gói dịch vụ trả phí) ${unverifiedBadge()}.</li>
+                    <li>Nhật ký an ninh, lịch sử xử lý khiếu nại/vi phạm hoặc ghi nhận đã tiếp nhận và thực hiện yêu cầu xóa dữ liệu nhằm phục vụ đối chiếu và tuân thủ pháp luật.</li>
+                    <li>Dữ liệu đã được ẩn danh hóa hoặc nằm trong bản sao lưu hệ thống đang chờ ghi đè tự động theo chu kỳ kỹ thuật ${unverifiedBadge()}.</li>
+                  </ul>
+                </section>
+
+                <!-- 5. Hướng dẫn thu hồi quyền ứng dụng từ TikTok -->
+                <section class="rounded-2xl bg-gradient-to-br from-cyan-950/35 via-slate-900/85 to-purple-950/35 border border-cyan-400/30 p-6 sm:p-7 space-y-4">
+                  <h2 class="font-display text-xl font-bold text-white flex items-center gap-2.5">
+                    <span class="w-7 h-7 rounded-lg bg-cyan-400/20 border border-cyan-400/40 text-cyan-200 font-mono text-xs flex items-center justify-center">5</span>
+                    <span>Hướng dẫn thu hồi quyền ứng dụng từ TikTok</span>
+                  </h2>
+                  <p class="text-sm text-slate-300 leading-relaxed">
+                    Bên cạnh việc gửi yêu cầu xóa dữ liệu tới SIÊU ĐĂNG AI, bạn có thể trực tiếp ngắt hoặc thu hồi quyền truy cập của ứng dụng bên thứ ba ngay trên tài khoản TikTok của mình:
+                  </p>
+                  <ol class="list-decimal pl-5 space-y-2 text-sm text-slate-200 leading-relaxed">
+                    <li>Mở ứng dụng <strong>TikTok</strong> trên điện thoại hoặc truy cập tài khoản TikTok trên trình duyệt.</li>
+                    <li>Vào trang <strong>Hồ sơ (Profile)</strong> → mở <strong>Menu (biểu tượng ba gạch ngang ≡)</strong> ở góc trên bên phải.</li>
+                    <li>Chọn <strong>Cài đặt và quyền riêng tư (Settings and privacy)</strong>.</li>
+                    <li>Tìm mục <strong>Bảo mật (Security)</strong> → chọn <strong>Quyền truy cập ứng dụng / Quản lý quyền truy cập của ứng dụng (Manage app permissions)</strong> (tên hiển thị có thể thay đổi nhẹ theo phiên bản ứng dụng TikTok).</li>
+                    <li>Chọn ứng dụng liên quan đến <strong>SIÊU ĐĂNG AI</strong> và thực hiện <strong>Xóa quyền truy cập / Gỡ quyền (Remove access)</strong>.</li>
+                  </ol>
+                  <p class="text-xs text-slate-400 leading-relaxed">
+                    Sau khi thu hồi quyền trên TikTok, nếu bạn cũng muốn yêu cầu xóa dữ liệu đã lưu trên phía SIÊU ĐĂNG AI, hãy gửi email tới <a href="mailto:${SUPPORT_EMAIL}" class="font-mono text-cyan-300 hover:underline">${SUPPORT_EMAIL}</a>.
+                  </p>
+                </section>
+              </div>
+
+              <!-- Cột thông tin nhanh bên phải -->
+              <aside class="lg:col-span-4 space-y-6">
+                <div class="rounded-2xl glass-card p-6 space-y-4 sticky top-28">
+                  <p class="text-xs font-mono uppercase tracking-wider text-cyan-300">Kênh tiếp nhận xóa dữ liệu</p>
+                  <h3 class="font-display text-lg font-bold text-white">SIÊU ĐĂNG AI</h3>
+                  <p class="text-sm text-slate-300 leading-relaxed">
+                    Gửi yêu cầu xóa tài khoản hoặc dữ liệu cá nhân trực tiếp qua email chính thức:
+                  </p>
+                  <a href="mailto:${SUPPORT_EMAIL}?subject=%5BY%C3%AAu%20c%E1%BA%A7u%20x%C3%B3a%20d%E1%BB%AF%20li%E1%BB%87u%5D%20SI%C3%8AU%20%C4%90%C4%82NG%20AI" class="block w-full text-center px-4 py-3 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-cyan-300 to-sky-400 hover:from-cyan-200 hover:to-sky-300 transition-colors">
+                    Gửi email yêu cầu xóa dữ liệu
+                  </a>
+                  <p class="text-xs font-mono text-center text-cyan-200 select-all">${SUPPORT_EMAIL}</p>
+
+                  <div class="pt-4 border-t border-slate-800 space-y-2 text-xs text-slate-400">
+                    <p class="font-semibold text-slate-200">Tài liệu liên quan:</p>
+                    <ul class="space-y-1.5">
+                      <li><a href="#/privacy" data-route="/privacy" class="text-cyan-300 hover:underline">→ Chính sách bảo mật (/privacy)</a></li>
+                      <li><a href="#/terms" data-route="/terms" class="text-cyan-300 hover:underline">→ Điều khoản sử dụng (/terms)</a></li>
+                      <li><a href="#/contact" data-route="/contact" class="text-cyan-300 hover:underline">→ Trang liên hệ (/contact)</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        `;
+      }
+
+      /**
+       * 5. TRANG LIÊN HỆ (/contact) — Có form liên hệ xác thực, thông báo trạng thái & nút xem trước trang 404
+       */
+      function renderContactView() {
+        return `
+          <div class="view-enter space-y-8">
+            ${renderPageHero({
+              badge: 'Hỗ trợ & kết nối · /contact',
+              title: 'Liên hệ',
+              highlight: 'SIÊU ĐĂNG AI',
+              subtitle: 'Kết nối trực tiếp với SIÊU ĐĂNG AI để được hỗ trợ sử dụng sản phẩm, giải đáp chính sách pháp lý, gửi yêu cầu dữ liệu hoặc trao đổi hợp tác.',
+              metaItems: [
+                { label: 'Thương hiệu', value: 'SIÊU ĐĂNG AI' },
+                { label: 'Email chính thức', value: `<a href="mailto:${SUPPORT_EMAIL}" class="font-mono text-cyan-300 hover:underline">${SUPPORT_EMAIL}</a>` },
+              ],
+            })}
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+              <!-- Form liên hệ -->
+              <div class="lg:col-span-7">
+                <section class="rounded-2xl glass-card p-6 sm:p-8 space-y-5">
+                  <div>
+                    <h2 class="font-display text-xl font-bold text-white">Gửi tin nhắn hỗ trợ</h2>
+                    <p class="text-sm text-slate-400 mt-1">
+                      Vui lòng điền đầy đủ các trường bắt buộc (<span class="text-cyan-300">*</span>). Hệ thống sẽ kiểm tra tính hợp lệ và hiển thị thông báo trạng thái ngay bên dưới.
+                    </p>
+                  </div>
+
+                  <!-- Vùng thông báo trạng thái (validation / success / info) -->
+                  <div id="contact-status-box" role="status" aria-live="polite" class="hidden rounded-xl p-4 text-sm border"></div>
+
+                  <form id="contact-form" novalidate class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label for="contact-name" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
+                          Họ và tên <span class="text-cyan-300">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          id="contact-name"
+                          name="name"
+                          placeholder="Ví dụ: Nguyễn Minh Anh"
+                          class="w-full px-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-700/90 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-colors"
+                          required
+                        />
+                        <p id="err-name" class="mt-1 text-xs text-rose-400 hidden"></p>
+                      </div>
+
+                      <div>
+                        <label for="contact-email" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
+                          Email phản hồi <span class="text-cyan-300">*</span>
+                        </label>
+                        <input
+                          type="email"
+                          id="contact-email"
+                          name="email"
+                          placeholder="ban@example.com"
+                          class="w-full px-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-700/90 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-colors"
+                          required
+                        />
+                        <p id="err-email" class="mt-1 text-xs text-rose-400 hidden"></p>
+                      </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label for="contact-role" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
+                          Đối tượng sử dụng
+                        </label>
+                        <select
+                          id="contact-role"
+                          name="role"
+                          class="w-full px-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-700/90 text-sm text-white focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-colors"
+                        >
+                          <option value="Cá nhân / Nhà sáng tạo nội dung">Cá nhân / Nhà sáng tạo nội dung</option>
+                          <option value="Doanh nghiệp / Đội ngũ nội dung">Doanh nghiệp / Đội ngũ nội dung</option>
+                          <option value="Đối tác / Kiểm tra chính sách &amp; pháp lý">Đối tác / Kiểm tra chính sách &amp; pháp lý</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label for="contact-topic" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
+                          Chủ đề liên hệ <span class="text-cyan-300">*</span>
+                        </label>
+                        <select
+                          id="contact-topic"
+                          name="topic"
+                          class="w-full px-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-700/90 text-sm text-white focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-colors"
+                        >
+                          <option value="Hỗ trợ sử dụng SIÊU ĐĂNG AI">Hỗ trợ sử dụng SIÊU ĐĂNG AI</option>
+                          <option value="Câu hỏi về Điều khoản / Chính sách bảo mật">Câu hỏi về Điều khoản / Chính sách bảo mật</option>
+                          <option value="Yêu cầu hỗ trợ về dữ liệu người dùng">Yêu cầu hỗ trợ về dữ liệu người dùng</option>
+                          <option value="Trao đổi khác">Trao đổi khác</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label for="contact-message" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
+                        Nội dung chi tiết <span class="text-cyan-300">*</span>
+                      </label>
+                      <textarea
+                        id="contact-message"
+                        name="message"
+                        rows="5"
+                        placeholder="Mô tả rõ nội dung bạn cần hỗ trợ hoặc câu hỏi của bạn (tối thiểu 15 ký tự)..."
+                        class="w-full px-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-700/90 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-colors"
+                        required
+                      ></textarea>
+                      <p id="err-message" class="mt-1 text-xs text-rose-400 hidden"></p>
+                    </div>
+
+                    <div class="flex items-start gap-2.5 pt-1">
+                      <input
+                        type="checkbox"
+                        id="contact-consent"
+                        name="consent"
+                        class="mt-1 w-4 h-4 rounded border-slate-600 bg-slate-900 text-cyan-400 focus:ring-cyan-400/30 cursor-pointer"
+                      />
+                      <label for="contact-consent" class="text-xs text-slate-300 leading-relaxed cursor-pointer">
+                        Tôi đã đọc <a href="#/privacy" data-route="/privacy" class="text-cyan-300 hover:underline">Chính sách bảo mật</a> và đồng ý để SIÊU ĐĂNG AI sử dụng thông tin liên hệ này nhằm phản hồi yêu cầu của tôi. <span class="text-cyan-300">*</span>
+                      </label>
+                    </div>
+                    <p id="err-consent" class="text-xs text-rose-400 hidden"></p>
+
+                    <div class="pt-2 flex flex-wrap items-center gap-3">
+                      <button
+                        type="submit"
+                        class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-cyan-300 via-cyan-400 to-sky-400 hover:from-cyan-200 hover:to-sky-300 shadow-cyan-sm transition-all cursor-pointer"
+                      >
+                        <span>Gửi yêu cầu liên hệ</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        id="reset-contact-btn"
+                        class="px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white bg-slate-800/75 hover:bg-slate-800 border border-slate-700 transition-colors cursor-pointer"
+                      >
+                        Xóa nội dung form
+                      </button>
+                    </div>
+                  </form>
+                </section>
+              </div>
+
+              <!-- Thông tin liên hệ trực tiếp & hướng dẫn hỗ trợ -->
+              <div class="lg:col-span-5 space-y-6">
+                <section class="rounded-2xl glass-card p-6 space-y-4">
+                  <p class="text-xs font-mono uppercase tracking-wider text-cyan-300">Thông tin liên hệ trực tiếp</p>
+                  <h2 class="font-display text-xl font-bold text-white">SIÊU ĐĂNG AI</h2>
+
+                  <div class="space-y-3 text-sm">
+                    <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                      <p class="text-xs text-slate-400">Thương hiệu / Phần mềm</p>
+                      <p class="font-semibold text-white mt-0.5">SIÊU ĐĂNG AI</p>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                      <p class="text-xs text-slate-400">Email hỗ trợ chính thức</p>
+                      <div class="mt-0.5 flex items-center justify-between gap-2">
+                        <a href="mailto:${SUPPORT_EMAIL}" class="font-mono text-cyan-300 hover:underline break-all">${SUPPORT_EMAIL}</a>
+                        <button
+                          type="button"
+                          id="copy-email-btn"
+                          class="shrink-0 px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors cursor-pointer"
+                        >
+                          Sao chép
+                        </button>
+                      </div>
+                      <p id="copy-email-feedback" class="text-[11px] text-cyan-300 mt-1 hidden">Đã sao chép địa chỉ email vào clipboard.</p>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="rounded-2xl glass-card p-6 space-y-3">
+                  <h3 class="font-display text-base font-bold text-white">Hướng dẫn liên hệ hỗ trợ hiệu quả</h3>
+                  <ul class="list-disc pl-5 space-y-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    <li>Ghi rõ chủ đề và mô tả chi tiết vấn đề hoặc yêu cầu của bạn để được phản hồi chính xác.</li>
+                    <li>Nếu liên quan đến tài khoản hoặc dữ liệu, không gửi mật khẩu hay mã xác thực nhạy cảm qua email.</li>
+                    <li>Để yêu cầu xóa dữ liệu, bạn cũng có thể tham khảo trang <a href="#/data-deletion" data-route="/data-deletion" class="text-cyan-300 hover:underline font-medium">Xóa dữ liệu người dùng (/data-deletion)</a>.</li>
+                  </ul>
+
+                  <div class="pt-3 border-t border-slate-800 flex items-center justify-between gap-2">
+                    <span class="text-xs text-slate-400">Kiểm tra giao diện lỗi:</span>
+                    <button
+                      type="button"
+                      id="contact-preview-404"
+                      class="px-3 py-1.5 rounded-lg text-xs font-semibold text-purple-200 bg-purple-950/50 hover:bg-purple-900/50 border border-purple-400/35 transition-colors cursor-pointer"
+                    >
+                      Mở trang 404
+                    </button>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      /**
+       * 6. TRANG 404 KHÔNG TÌM THẤY TRANG (/404)
+       */
+      function renderNotFoundView(requestedPath = '/404') {
+        return `
+          <div class="view-enter max-w-2xl mx-auto text-center py-10 sm:py-16">
+            <div class="rounded-3xl glass-card p-8 sm:p-12 space-y-6 relative overflow-hidden">
+              <div class="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full bg-purple-500/15 blur-3xl"></div>
+
+              <div class="relative z-10 space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-purple-500/15 text-purple-300 border border-purple-400/30">
+                  <span>HTTP 404 · KHÔNG TÌM THẤY TRANG</span>
+                </div>
+
+                <h1 class="font-display text-5xl sm:text-6xl font-extrabold bg-gradient-to-r from-cyan-300 via-sky-300 to-purple-400 bg-clip-text text-transparent">
+                  404
+                </h1>
+
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-white">
+                  Đường dẫn bạn truy cập không tồn tại
+                </h2>
+
+                <p class="text-sm text-slate-300 leading-relaxed">
+                  Địa chỉ <code class="px-2 py-0.5 rounded bg-slate-900 text-cyan-200 font-mono text-xs">${escapeHtml(requestedPath)}</code> hiện không có trên hệ thống trang của <strong>SIÊU ĐĂNG AI</strong> hoặc đã được thay đổi.
+                </p>
+
+                <div class="pt-3 flex flex-wrap items-center justify-center gap-3">
+                  <a href="#/" data-route="/" class="px-5 py-2.5 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-cyan-300 to-sky-400 hover:from-cyan-200 hover:to-sky-300 transition-colors">
+                    Về Trang chủ (/)
+                  </a>
+                  <a href="#/terms" data-route="/terms" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-200 bg-slate-900/80 hover:bg-slate-800 border border-slate-700 transition-colors">
+                    Điều khoản
+                  </a>
+                  <a href="#/privacy" data-route="/privacy" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-200 bg-slate-900/80 hover:bg-slate-800 border border-slate-700 transition-colors">
+                    Chính sách bảo mật
+                  </a>
+                  <a href="#/data-deletion" data-route="/data-deletion" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-200 bg-slate-900/80 hover:bg-slate-800 border border-slate-700 transition-colors">
+                    Xóa dữ liệu
+                  </a>
+                  <a href="#/contact" data-route="/contact" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-200 bg-slate-900/80 hover:bg-slate-800 border border-slate-700 transition-colors">
+                    Liên hệ
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      /**
+       * Cập nhật trạng thái active trên thanh điều hướng & hiển thị route hiện tại
+       */
+      function updateNavigationState(activeRoute) {
+        const routeDisplay = document.getElementById('active-route-display');
+        if (routeDisplay) {
+          routeDisplay.textContent = activeRoute;
+        }
+
+        document.querySelectorAll('.nav-item, .mobile-nav-link').forEach((el) => {
+          const itemRoute = el.getAttribute('data-route');
+          const isMatch = itemRoute === activeRoute;
+          el.classList.toggle('bg-cyan-400/15', isMatch);
+          el.classList.toggle('text-cyan-300', isMatch);
+          el.classList.toggle('border', isMatch && el.classList.contains('mobile-nav-link'));
+          el.classList.toggle('border-cyan-400/30', isMatch && el.classList.contains('mobile-nav-link'));
+          if (isMatch) {
+            el.setAttribute('aria-current', 'page');
+          } else {
+            el.removeAttribute('aria-current');
+          }
+        });
+      }
+
+      /**
+       * Gắn sự kiện cho form liên hệ trên trang /contact
+       */
+      function bindContactEvents() {
+        const form = document.getElementById('contact-form');
+        const resetBtn = document.getElementById('reset-contact-btn');
+        const copyBtn = document.getElementById('copy-email-btn');
+        const copyFeedback = document.getElementById('copy-email-feedback');
+        const statusBox = document.getElementById('contact-status-box');
+        const preview404Btn = document.getElementById('contact-preview-404');
+
+        if (preview404Btn) {
+          preview404Btn.addEventListener('click', () => navigateTo('/404', true));
+        }
+
+        if (copyBtn) {
+          copyBtn.addEventListener('click', () => {
+            try {
+              const tempInput = document.createElement('input');
+              tempInput.value = SUPPORT_EMAIL;
+              document.body.appendChild(tempInput);
+              tempInput.select();
+              document.execCommand('copy');
+              document.body.removeChild(tempInput);
+              if (copyFeedback) {
+                copyFeedback.classList.remove('hidden');
+              }
+            } catch (err) {
+              if (copyFeedback) {
+                copyFeedback.textContent = 'Email: ' + SUPPORT_EMAIL;
+                copyFeedback.classList.remove('hidden');
+              }
+            }
+          });
+        }
+
+        function setFieldError(errId, message) {
+          const errEl = document.getElementById(errId);
+          if (!errEl) return;
+          if (message) {
+            errEl.textContent = message;
+            errEl.classList.remove('hidden');
+          } else {
+            errEl.textContent = '';
+            errEl.classList.add('hidden');
+          }
+        }
+
+        function showStatusBox(type, title, detailHtml) {
+          if (!statusBox) return;
+          statusBox.classList.remove(
+            'hidden',
+            'bg-emerald-950/40', 'border-emerald-500/40', 'text-emerald-200',
+            'bg-rose-950/40', 'border-rose-500/40', 'text-rose-200'
+          );
+
+          if (type === 'success') {
+            statusBox.classList.add('bg-emerald-950/40', 'border-emerald-500/40', 'text-emerald-200');
+          } else {
+            statusBox.classList.add('bg-rose-950/40', 'border-rose-500/40', 'text-rose-200');
+          }
+
+          statusBox.innerHTML = `
+            <p class="font-bold">${escapeHtml(title)}</p>
+            <div class="mt-1 text-xs leading-relaxed">${detailHtml}</div>
+          `;
+        }
+
+        if (resetBtn && form) {
+          resetBtn.addEventListener('click', () => {
+            form.reset();
+            setFieldError('err-name', '');
+            setFieldError('err-email', '');
+            setFieldError('err-message', '');
+            setFieldError('err-consent', '');
+            if (statusBox) {
+              statusBox.classList.add('hidden');
+            }
+          });
+        }
+
+        if (form) {
+          form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const nameInput = document.getElementById('contact-name');
+            const emailInput = document.getElementById('contact-email');
+            const roleInput = document.getElementById('contact-role');
+            const topicInput = document.getElementById('contact-topic');
+            const messageInput = document.getElementById('contact-message');
+            const consentInput = document.getElementById('contact-consent');
+
+            const nameVal = (nameInput ? nameInput.value : '').trim();
+            const emailVal = (emailInput ? emailInput.value : '').trim();
+            const roleVal = roleInput ? roleInput.value : '';
+            const topicVal = topicInput ? topicInput.value : '';
+            const messageVal = (messageInput ? messageInput.value : '').trim();
+            const consentChecked = consentInput ? consentInput.checked : false;
+
+            let isValid = true;
+
+            setFieldError('err-name', '');
+            setFieldError('err-email', '');
+            setFieldError('err-message', '');
+            setFieldError('err-consent', '');
+
+            if (nameVal.length < 2) {
+              setFieldError('err-name', 'Vui lòng nhập họ và tên (ít nhất 2 ký tự).');
+              isValid = false;
+            }
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+            if (!emailPattern.test(emailVal)) {
+              setFieldError('err-email', 'Vui lòng nhập địa chỉ email hợp lệ (ví dụ: ten@domain.com).');
+              isValid = false;
+            }
+
+            if (messageVal.length < 15) {
+              setFieldError('err-message', 'Vui lòng nhập nội dung chi tiết tối thiểu 15 ký tự.');
+              isValid = false;
+            }
+
+            if (!consentChecked) {
+              setFieldError('err-consent', 'Vui lòng tích chọn xác nhận theo Chính sách bảo mật trước khi gửi.');
+              isValid = false;
+            }
+
+            if (!isValid) {
+              showStatusBox(
+                'error',
+                'Thông tin chưa hợp lệ',
+                'Vui lòng kiểm tra lại các trường được đánh dấu lỗi ở biểu mẫu trước khi gửi.'
+              );
+              return;
+            }
+
+            // Tạo liên kết mailto dự phòng tiện lợi cho người dùng gửi trực tiếp qua ứng dụng email nếu cần
+            const subject = encodeURIComponent(`[SIÊU ĐĂNG AI - ${topicVal}] ${nameVal}`);
+            const body = encodeURIComponent(
+              `Họ và tên: ${nameVal}\nEmail phản hồi: ${emailVal}\nĐối tượng: ${roleVal}\nChủ đề: ${topicVal}\n\nNội dung:\n${messageVal}`
+            );
+            const mailtoHref = `mailto:${SUPPORT_EMAIL}?subject=${subject}&body=${body}`;
+
+            showStatusBox(
+              'success',
+              'Đã xác thực thông tin liên hệ thành công',
+              `Yêu cầu của <strong>${escapeHtml(nameVal)}</strong> (${escapeHtml(emailVal)}) về chủ đề <strong>${escapeHtml(topicVal)}</strong> đã được kiểm tra hợp lệ trên trình duyệt. ` +
+              `Vì đây là website tĩnh trên trình duyệt, bạn có thể mở nhanh trình gửi email tới <a href="${mailtoHref}" class="underline font-semibold text-white">${SUPPORT_EMAIL}</a> để gửi trực tiếp nội dung vừa soạn.`
+            );
+          });
+        }
+      }
+
+      /**
+       * Render giao diện tương ứng với route hiện tại
+       */
+      function renderCurrentRoute() {
+        const appRoot = document.getElementById('app-root');
+        if (!appRoot) return;
+
+        const currentRoute = resolveRoute();
+        let html = '';
+
+        switch (currentRoute) {
+          case '/':
+            html = renderHomeView();
+            document.title = 'SIÊU ĐĂNG AI — Hỗ Trợ Sáng Tạo, Quản Lý & Đăng Tải Nội Dung';
+            break;
+          case '/terms':
+            html = renderTermsView();
+            document.title = 'Điều khoản sử dụng — SIÊU ĐĂNG AI';
+            break;
+          case '/privacy':
+            html = renderPrivacyView();
+            document.title = 'Chính sách bảo mật — SIÊU ĐĂNG AI';
+            break;
+          case '/data-deletion':
+            html = renderDataDeletionView();
+            document.title = 'Xóa dữ liệu người dùng — SIÊU ĐĂNG AI';
+            break;
+          case '/contact':
+            html = renderContactView();
+            document.title = 'Liên hệ — SIÊU ĐĂNG AI';
+            break;
+          default:
+            html = renderNotFoundView(window.location.hash ? window.location.hash.slice(1) : window.location.pathname);
+            document.title = '404 Không tìm thấy trang — SIÊU ĐĂNG AI';
+            break;
+        }
+
+        appRoot.innerHTML = html;
+        updateNavigationState(currentRoute);
+
+        if (currentRoute === '/contact') {
+          bindContactEvents();
+        }
+      }
+
+      /**
+       * Quản lý Drawer điều hướng di động
+       */
+      function initMobileDrawer() {
+        const openBtn = document.getElementById('mobile-menu-toggle');
+        const closeBtn = document.getElementById('mobile-menu-close');
+        const backdrop = document.getElementById('mobile-drawer-backdrop');
+        const drawer = document.getElementById('mobile-drawer');
+        const preview404Mobile = document.getElementById('mobile-preview-404');
+
+        function openDrawer() {
+          if (!drawer || !backdrop || !openBtn) return;
+          backdrop.classList.remove('hidden');
+          requestAnimationFrame(() => {
+            backdrop.classList.remove('opacity-0');
+            drawer.classList.remove('translate-x-full');
+          });
+          openBtn.setAttribute('aria-expanded', 'true');
+          drawer.focus();
+        }
+
+        function closeDrawer() {
+          if (!drawer || !backdrop || !openBtn) return;
+          drawer.classList.add('translate-x-full');
+          backdrop.classList.add('opacity-0');
+          openBtn.setAttribute('aria-expanded', 'false');
+          window.setTimeout(() => {
+            backdrop.classList.add('hidden');
+          }, 220);
+        }
+
+        if (openBtn) openBtn.addEventListener('click', openDrawer);
+        if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+        if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+        if (preview404Mobile) {
+          preview404Mobile.addEventListener('click', () => {
+            closeDrawer();
+            navigateTo('/404', true);
+          });
+        }
+
+        document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+          link.addEventListener('click', () => {
+            closeDrawer();
+          });
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && drawer && !drawer.classList.contains('translate-x-full')) {
+            closeDrawer();
+          }
+        });
+      }
+
+      /**
+       * Lắng nghe click cho các liên kết nội bộ có data-route
+       */
+      document.addEventListener('click', (e) => {
+        const anchor = e.target.closest('a[data-route]');
+        if (!anchor) return;
+        const route = anchor.getAttribute('data-route');
+        if (route && VALID_ROUTES.includes(route)) {
+          e.preventDefault();
+          navigateTo(route);
+        }
+      });
+
+      const headerPreview404 = document.getElementById('preview-404-btn');
+      if (headerPreview404) {
+        headerPreview404.addEventListener('click', () => navigateTo('/404', true));
+      }
+
+      window.addEventListener('hashchange', renderCurrentRoute);
+
+      // Khởi tạo ứng dụng
+      initMobileDrawer();
+      renderCurrentRoute();
+    })();
+  </script>
+</body>
+</html>
