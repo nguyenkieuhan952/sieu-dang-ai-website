@@ -423,20 +423,38 @@
         }
 
         const pathname = window.location.pathname || '/';
-        // Nếu pathname khớp trực tiếp một route hợp lệ
-        if (VALID_ROUTES.includes(pathname)) {
-          return pathname;
-        }
+        const normalizedPath = pathname.replace(/\/+$/, '') || '/';
 
-        // Nếu pathname là index.html hoặc thư mục gốc
-        if (pathname === '/' || pathname.endsWith('/index.html')) {
+        // GitHub Pages dạng project site dùng đường dẫn /<repository>/.
+        // Ví dụ: /sieu-dang-ai-website/ phải được xem là trang chủ,
+        // không phải một route lạ dẫn tới màn hình 404.
+        const repositoryBase = '/sieu-dang-ai-website';
+        if (normalizedPath === repositoryBase) {
           return '/';
         }
 
-        // Trích xuất phần cuối nếu người dùng truy cập dạng /terms hoặc /privacy trên sub-path
-        for (const r of ['/terms', '/privacy', '/data-deletion', '/contact', '/404']) {
-          if (pathname.endsWith(r)) {
-            return r;
+        // Nếu pathname khớp trực tiếp một route hợp lệ
+        if (VALID_ROUTES.includes(normalizedPath)) {
+          return normalizedPath;
+        }
+
+        // Trang chủ tại domain root, project root hoặc index.html
+        if (
+          normalizedPath === '/' ||
+          normalizedPath.endsWith('/index.html')
+        ) {
+          return '/';
+        }
+
+        // Các trang nội bộ được hỗ trợ khi truy cập theo pathname.
+        // Phần gốc repository được bỏ qua khi GitHub Pages dùng project URL.
+        const pathWithoutRepository = normalizedPath.startsWith(repositoryBase + '/')
+          ? normalizedPath.slice(repositoryBase.length)
+          : normalizedPath;
+
+        for (const route of ['/terms', '/privacy', '/data-deletion', '/contact', '/404']) {
+          if (pathWithoutRepository === route || pathWithoutRepository.endsWith(route)) {
+            return route;
           }
         }
 
